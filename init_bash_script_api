@@ -1,0 +1,18 @@
+echo "## Create USER postgres and DROP TABLE ##";
+sudo -u postgres dropdb --if-exists dbstore;
+sudo -u postgres createuser superadmin; 
+
+echo "## Create database postgres ##";
+sudo -u postgres createdb -E UTF8 dbstore; 
+
+echo "## Add password user postgres ##";
+sudo -u postgres psql --command "alter user superadmin with encrypted password 'superadmin';";
+
+echo "##Grant privileges to postgres user ##" ; 
+sudo -u postgres psql --command "grant all privileges on database dbstore to superadmin;";
+
+
+ 
+
+ 
+

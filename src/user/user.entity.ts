@@ -23,5 +23,6 @@ export class User {
   @Column()
   personalPhoneNumber: string;
   @Column({nullable:true})
-  password:string=Math.random().toString(36).slice(-8);
+  //password:string=Math.random().toString(36).slice(-8);
+  password:string;
 }

@@ -12,6 +12,7 @@ import { MailModule } from './mail/mail.module';
     ConfigModule.forRoot({
       envFilePath:[`.env.stage.${process.env.STAGE}`],
     }),
+    ConfigModule.forRoot(), MailModule,
     UserModule,
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
